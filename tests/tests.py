@@ -1000,6 +1000,11 @@ def test_pipes2():
     run(dpath("test_pipes2"))
 
 
+@connected
+def test_remote_zenodo():
+    run(dpath("test_remote_zenodo"))
+
+
 def test_tibanna():
     workdir = dpath("test_tibanna")
     subprocess.check_call(["python", "cleanup.py"], cwd=workdir)
@@ -1099,8 +1104,3 @@ def test_output_file_cache_remote():
         default_remote_provider="S3Mocked",
         default_remote_prefix="test-remote-bucket",
     )
-
-
-@connected
-def test_remote_zenodo():
-    run(dpath("test_remote_zenodo"))
